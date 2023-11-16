@@ -18,3 +18,6 @@ Current version runs HMMER first, then INFERNAL. Check if both HMMER and INFERNA
 Current version generates two outputs (test-prot-tbl.txt and tr-infernal-tblout.txt) find a method that parases through all sequences and merge them into one output file that shows E-values and/or bit scores from both HMMER and INFERNAL.
 
 Generate plot based on bitscore from HMMER and INFERNAL.
+
+Note:
+Now we can parallelize the workflow even further by adding inputs and rules. 

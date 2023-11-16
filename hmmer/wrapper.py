@@ -50,7 +50,7 @@ extra = snakemake.params.get("extra", "")
 log = snakemake.log_fmt_shell(stdout=False, stderr=True)
 
 shell(
-    " hmmsearch --cpu {snakemake.threads} "
+    " nhmmer --max --cpu {snakemake.threads} "
     " {out_cmd} {thresh_cmd} {extra} {profile} "
     " {snakemake.input.fasta} {log}"
 )

@@ -25,9 +25,9 @@ if tblout:
     out_cmd += " --tblout {} ".format(tblout)
 
 # save parseable table of per-domain hits to file <f>
-domtblout = snakemake.output.get("domtblout", "")
-if domtblout:
-    out_cmd += " --domtblout {} ".format(domtblout)
+#domtblout = snakemake.output.get("domtblout", "")
+#if domtblout:
+    #out_cmd += " --domtblout {} ".format(domtblout)
 
 # Save a multiple alignment of all significant hits (those satisfying inclusion thresholds) to the file <f>
 alignment_hits = snakemake.output.get("alignment_hits", "")

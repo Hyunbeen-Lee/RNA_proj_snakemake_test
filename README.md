@@ -13,7 +13,7 @@
 **Future improvements/experiments:**
 
 
-Current version runs HMMER first, then INFERNAL. Check if both HMMER and INFERNAL can operate in parallel (SOLVED: put -j in the commandline)
+Current version runs HMMER first, then INFERNAL. Check if both HMMER and INFERNAL can operate in parallel **(SOLVED: put -j in the commandline)**
 
 Current version generates two outputs (test-prot-tbl.txt and tr-infernal-tblout.txt) find a method that parases through all sequences and merge them into one output file that shows E-values and/or bit scores from both HMMER and INFERNAL.
 

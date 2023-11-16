@@ -1,9 +1,9 @@
 """Snakemake wrapper for hmmsearch"""
 
-#__author__ = "N. Tessa Pierce"
-#__copyright__ = "Copyright 2019, N. Tessa Pierce"
-#__email__ = "ntpierce@gmail.com"
-#__license__ = "MIT"
+__author__ = "N. Tessa Pierce"
+__copyright__ = "Copyright 2019, N. Tessa Pierce"
+__email__ = "ntpierce@gmail.com"
+__license__ = "MIT"
 
 from os import path
 from snakemake.shell import shell
@@ -23,6 +23,11 @@ if outfile:
 tblout = snakemake.output.get("tblout", "")
 if tblout:
     out_cmd += " --tblout {} ".format(tblout)
+
+# save parseable table of per-domain hits to file <f>
+domtblout = snakemake.output.get("domtblout", "")
+if domtblout:
+    out_cmd += " --domtblout {} ".format(domtblout)
 
 # Save a multiple alignment of all significant hits (those satisfying inclusion thresholds) to the file <f>
 alignment_hits = snakemake.output.get("alignment_hits", "")
@@ -45,7 +50,7 @@ extra = snakemake.params.get("extra", "")
 log = snakemake.log_fmt_shell(stdout=False, stderr=True)
 
 shell(
-    " nhmmer --max --cpu {snakemake.threads} "
+    " hmmsearch --cpu {snakemake.threads} "
     " {out_cmd} {thresh_cmd} {extra} {profile} "
     " {snakemake.input.fasta} {log}"
 )

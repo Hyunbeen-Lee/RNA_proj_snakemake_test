@@ -6,7 +6,7 @@ rule all:
 rule hmmsearch_profile:
     input:
         fasta="NODE_1517784_length_305_cov_1.fasta",
-        profile="new_prokaryote_PTC.hmm",
+        profile="", #HMM model input
     output:
         # only one of these is required
         tblout="test-prot-tbl.txt", # save parseable table of per-sequence hits to file <f>
@@ -27,7 +27,7 @@ rule hmmsearch_profile:
 rule cmscan_profile:
     input:
         fasta="NODE_1517784_length_305_cov_1.fasta",
-        profile="new_prokaryote_PTC.cm"
+        profile="" #CM model input
     output:
         tblout="tr-infernal-tblout.txt",
     log:
